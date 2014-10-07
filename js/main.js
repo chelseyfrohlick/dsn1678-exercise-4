@@ -1,6 +1,11 @@
 var $win = $(window);
+var $sun = $('.sun');
+var $sunSection = $('.sun-section');
 
 $win.on('scroll', function () {
-	console.log('scrolling!');
-
+	var scrollPos = $win.scrollTop();
+	
+	$sun.css('transform','rotate(' + scrollPos / 5 + 'deg)');
+	$sunSection.css('background-position', ' center ' + scrollPos / 3 + 'px');
+	
 });
